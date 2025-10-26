@@ -1,12 +1,12 @@
-/**
- * Set up and control an elementary cellular automaton.
+/** 
+ * Set up and control an elementary cellular automaton. 
  * 
  * @author David J. Barnes and Michael Kölling
  * @version 7.1
- */
+ */ 
 public class AutomatonController
 {
-    // The automaton. 
+    // The automaton.  
     private Automaton auto;
     
     /**
@@ -41,7 +41,7 @@ public class AutomatonController
     
     /**
      * Run the automaton for a single step.
-     */
+     */ 
     public void step()
     {
         auto.update();
@@ -54,6 +54,12 @@ public class AutomatonController
     public void reset()
     {
         auto.reset();
+        auto.print();
+    }
+    
+    public void reset2()
+    {
+        auto.reset3();
         auto.print();
     }
 }

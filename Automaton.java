@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+import java.util.Random;
 /**
  * Model a 1D elementary cellular automaton.
  * 
@@ -77,6 +77,26 @@ public class Automaton
     {
         Arrays.fill(state, 0);
         // Seed the automaton with a single 'on' cell.
-        state[numberOfCells / 2] = 1;
+        state[numberOfCells/2] = 1;
+    }
+    
+    public void reset2() // Question 29
+    {
+        Random rand = new Random();
+        int number = rand.nextInt(50);
+        Arrays.fill(state, 0);
+        // Seed the automaton with a single 'on' cell.
+        state[numberOfCells/number] = number;
+    }
+    
+    public void reset3() // Question 29
+    {
+        Random rand = new Random();
+        int number = rand.nextInt(5);
+        Arrays.fill(state, 0);
+        // Seed the automaton with a single 'on' cell.
+        state[numberOfCells/2] = 1; // middle
+        state[numberOfCells/2-number] = 1; // left
+        state[numberOfCells/2+number] = 1; // right
     }
 }
