@@ -70,6 +70,22 @@ public class Automaton
         state = nextState;
     }
     
+    public void update2() //Question 30
+    {
+        // Build the new state in a separate array.
+        int[] nextState = new int[state.length];
+        // Naively update the state of each cell
+        // based on the state of its two neighbors.
+        for(int i = 0; i < state.length; i++) {
+            int left, center, right;
+            left = i == 0? 0 : state[i-1];
+            center = state[i];
+            right = i + 1 < state.length? state[i+1] : 0;
+            nextState[i] = (left + center + right) % 2;
+        }
+        state = nextState;
+    }
+    
     /**
      * Reset the automaton.
      */
@@ -80,19 +96,10 @@ public class Automaton
         state[numberOfCells/2] = 1;
     }
     
-    public void reset2() // Question 29
-    {
-        Random rand = new Random();
-        int number = rand.nextInt(50);
-        Arrays.fill(state, 0);
-        // Seed the automaton with a single 'on' cell.
-        state[numberOfCells/number] = number;
-    }
-    
     public void reset3() // Question 29
     {
         Random rand = new Random();
-        int number = rand.nextInt(7);
+        int number = rand.nextInt(7); //gives a random int between 1 and 7
         Arrays.fill(state, 0);
         // Seed the automaton with a single 'on' cell.
         state[numberOfCells/2] = 1; // middle

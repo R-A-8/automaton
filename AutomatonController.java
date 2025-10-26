@@ -44,7 +44,7 @@ public class AutomatonController
      */ 
     public void step()
     {
-        auto.update();
+        auto.update2();
         auto.print();
     }
     
