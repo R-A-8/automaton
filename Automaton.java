@@ -92,7 +92,7 @@ public class Automaton
     public void reset3() // Question 29
     {
         Random rand = new Random();
-        int number = rand.nextInt(5);
+        int number = rand.nextInt(7);
         Arrays.fill(state, 0);
         // Seed the automaton with a single 'on' cell.
         state[numberOfCells/2] = 1; // middle
