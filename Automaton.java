@@ -128,12 +128,10 @@ public class Automaton
         int center = state[0];
         for (int i=0; i<numberOfCells; i++){
             int right = state[i + 1];
-            nextState[i] = calculateNextState(left + center + right) % 2;
+            nextState[i] = calculateNextState(left + center + right);
             left = center;
             center = right;
         }
-        state = nextState;
-        System.out.println(state);
       
     }
 }
