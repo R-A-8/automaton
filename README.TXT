@@ -15,5 +15,5 @@ PART 3:
    b) Different patterns emerge. They are not deterministic.
 31. I think it's to differentiate between the current state and the next one. If we change nextState to state, it doesn't change anything.
 32. By using the "this." keyword. I feel like my answer is easier since.
-35.
-36.
+35. I think the number of set combinations is infinite.
+
