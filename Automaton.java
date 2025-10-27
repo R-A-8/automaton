@@ -47,7 +47,7 @@ public class Automaton
     public void update()
     {
         // Build the new state in a separate array.
-        int[] nextState = new int[state.length];
+        
         // Naively update the state of each cell
         // based on the state of its two neighbors.
         for(int i = 0; i < state.length; i++) {
@@ -65,9 +65,9 @@ public class Automaton
             else {
                 right = 0;
             }
-            nextState[i] = (left + center + right) % 2;
+            this.state[i] = (left + center + right) % 2;
         }
-        state = nextState;
+        state = this.state;
     }
     
     public void update2() //Question 30
@@ -82,6 +82,20 @@ public class Automaton
             center = state[i];
             right = i + 1 < state.length? state[i+1] : 0;
             nextState[i] = (left + center + right) % 2;
+        }
+        state = nextState;
+    }
+    
+     public void update3() // Question 33
+    {
+        int[] nextState = new int[state.length];
+        int left = 0;
+        int center = state[0];
+        for (int i=0; i<state.length; i++){
+            int right = i + 1 < state.length ? state[i+1] : 0;
+            nextState[i] = (left + center + right) % 2;
+            left = center;
+            center = right;
         }
         state = nextState;
     }
@@ -105,5 +119,21 @@ public class Automaton
         state[numberOfCells/2] = 1; // middle
         state[numberOfCells/2-number] = 1; // left
         state[numberOfCells/2+number] = 1; // right
+    }
+    
+     public void calculateNextState()
+    {
+        int[] nextState = new int[state.length];
+        int left = 0;
+        int center = state[0];
+        for (int i=0; i<numberOfCells; i++){
+            int right = state[i + 1];
+            nextState[i] = calculateNextState(left + center + right) % 2;
+            left = center;
+            center = right;
+        }
+        state = nextState;
+        System.out.println(state);
+      
     }
 }
