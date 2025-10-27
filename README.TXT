@@ -14,5 +14,6 @@ PART 3:
 29.a)You have to add cells to the left and the right by adding/subtracting from the numberOfCells/2. To do this, I added a random number variable. 
    b) Different patterns emerge. They are not deterministic.
 31. I think it's to differentiate between the current state and the next one. If we change nextState to state, it doesn't change anything.
-32.
-33.
+32. By using the "this." keyword. I feel like my answer is easier since.
+35.
+36.
